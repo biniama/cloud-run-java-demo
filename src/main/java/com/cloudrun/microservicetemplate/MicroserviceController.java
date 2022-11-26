@@ -42,4 +42,9 @@ public class MicroserviceController {
     logger.info("Structured logging example.");
     return "Hello World!";
   }
+
+  @GetMapping("/{name}")
+  public @ResponseBody String greet(@RequestParam(value = "name") String name) {
+    return "Hello" + name;
+  }
 }
