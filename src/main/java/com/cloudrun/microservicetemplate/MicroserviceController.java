@@ -22,7 +22,7 @@ import org.slf4j.MDC;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PathVariable;
 
 /** Example REST controller to demonstrate structured logging. */
 @RestController
@@ -45,7 +45,7 @@ public class MicroserviceController {
   }
 
   @GetMapping("/{name}")
-  public @ResponseBody String greet(@RequestParam(value = "name") String name) {
+  public @ResponseBody String greet(@PathVariable(value = "name") String name) {
     return "Hello" + name;
   }
 }
